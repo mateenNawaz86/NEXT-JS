@@ -11,11 +11,12 @@ type pageProps = {
 const fetchTodo = async (todoId: string) => {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/todos/${todoId}`,
+
     // next automatically revalidate the page after 60 seconds
     { next: { revalidate: 60 } }
   );
 
-  //   convert the json data into javaScript string
+  // convert the json data into javaScript string
   const todo: Todo = await res.json();
   return todo;
 };

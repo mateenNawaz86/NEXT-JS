@@ -1,9 +1,11 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   experimental: {
-    appDir: true,
+    serverComponents: true, // Enable Server Components
+    serverActions: true, // Enable Server Actions
   },
+  // Other configurations...
 };
 
 module.exports = nextConfig;
